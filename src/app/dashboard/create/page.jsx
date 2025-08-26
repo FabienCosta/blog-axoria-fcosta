@@ -4,7 +4,7 @@ import { addPost } from "@/lib/serverAction/blog/postServerAction";
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 
-export default function CreatePage() {
+export default function Page() {
   const [tags, setTags] = useState([]);
   const router = useRouter();
   const tagInputRef = useRef(null);

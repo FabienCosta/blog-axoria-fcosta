@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getUserPostsFromUserID } from "@/lib/serverMethods/blog/postMethods";
 import DeletePostButton from "./components/DeletePostButton";
 
-export default async function Page({ params }) {
+export default async function page({ params }) {
   const { userId } = await params;
 
   const posts = await getUserPostsFromUserID(userId);
@@ -35,7 +35,7 @@ export default async function Page({ params }) {
             </li>
           ))
         ) : (
-          <li>You haven&apos;t created any articles yet.</li>
+          <li>You haven't created any articles yet.</li>
         )}
       </ul>
     </main>

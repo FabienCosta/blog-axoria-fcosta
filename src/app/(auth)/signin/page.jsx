@@ -4,7 +4,7 @@ import { login } from "@/lib/serverAction/session/sessionServerActions";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/app/authContext";
 
-export default function SignInPage() {
+export default function page() {
   const { setIsAuthenticated } = useAuth();
   const serverInfoRef = useRef();
   const submitButtonRef = useRef();
