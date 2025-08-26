@@ -41,3 +41,8 @@ body {
 .f-auth-input {
   @apply shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight mb-5 focus:outline-slate-400
 }
+
+/* Images avec ratio 16/9 */
+.img-16-9 {
+  aspect-ratio: 16 / 9;
+}
