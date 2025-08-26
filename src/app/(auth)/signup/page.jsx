@@ -3,7 +3,7 @@ import { register } from "@/lib/serverAction/session/sessionServerActions";
 import React, { useRef } from "react";
 import { useRouter } from "next/navigation";
 
-export default function Page() {
+export default function SignUpPage() {
   const serverInfoRef = useRef();
   const submitButtonRef = useRef();
 
