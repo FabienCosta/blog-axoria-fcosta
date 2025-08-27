@@ -26,16 +26,14 @@
 // };
 
 import { NextResponse } from "next/server";
-import { cookies } from "next/headers";
-import { validateSession } from "@/lib/serverMethods/session/sessionMethods";
+import { sessionInfo } from "@/lib/serverMethods/session/sessionMethods";
 
-export const runtime = "nodejs"; // ← permet d’utiliser Mongoose
+export const runtime = "nodejs"; // permet d’utiliser Mongoose
 
 export async function middleware(req) {
-  const cookieHeader = (await cookies()).toString();
-  const { authorized } = await validateSession(cookieHeader); // DB côté serveur
+  const result = await sessionInfo(); // utilise ta fonction existante
 
-  if (!authorized) {
+  if (!result.success) {
     return NextResponse.redirect(new URL("/signin", req.nextUrl.origin));
   }
 
@@ -43,5 +41,5 @@ export async function middleware(req) {
 }
 
 export const config = {
-  matcher: ["/dashboard/:path*"],
+  matcher: ["/dashboard/:path*"], // toutes les routes dashboard
 };

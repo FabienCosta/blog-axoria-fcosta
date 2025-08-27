@@ -42,12 +42,13 @@ import React from "react";
 import Link from "next/link";
 import { getTags } from "@/lib/serverMethods/blog/tagMethods";
 
-export const revalidate = 60;
+export const revalidate = 60; // cache léger si tu veux
 export const dynamic = "force-dynamic"; // page rendue côté serveur
-export const runtime = "nodejs"; // utilisation Mongoose possible
+export const runtime = "nodejs"; // permet d’utiliser Mongoose
 
 export default async function CategoriesPage() {
   let tags = [];
+
   try {
     tags = await getTags(); // DB uniquement à runtime
   } catch (error) {
