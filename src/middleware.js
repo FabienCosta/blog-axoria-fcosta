@@ -27,12 +27,13 @@
 
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import { validateSession } from "@/lib/serverMethods/session/sessionMethods"; // function côté serveur
+import { validateSession } from "@/lib/serverMethods/session/sessionMethods";
+
+export const runtime = "nodejs"; // ← permet d’utiliser Mongoose
 
 export async function middleware(req) {
-  // Vérifie la session directement côté serveur
   const cookieHeader = (await cookies()).toString();
-  const { authorized } = await validateSession(cookieHeader); // n’appelle pas /api
+  const { authorized } = await validateSession(cookieHeader); // DB côté serveur
 
   if (!authorized) {
     return NextResponse.redirect(new URL("/signin", req.nextUrl.origin));

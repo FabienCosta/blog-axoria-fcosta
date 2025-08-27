@@ -43,12 +43,13 @@ import Link from "next/link";
 import { getTags } from "@/lib/serverMethods/blog/tagMethods";
 
 export const revalidate = 60;
-export const dynamic = "force-dynamic"; // ← permet le rendu côté serveur
+export const dynamic = "force-dynamic"; // page rendue côté serveur
+export const runtime = "nodejs"; // utilisation Mongoose possible
 
 export default async function CategoriesPage() {
   let tags = [];
   try {
-    tags = await getTags(); // DB uniquement au runtime
+    tags = await getTags(); // DB uniquement à runtime
   } catch (error) {
     console.error("Failed to fetch tags:", error);
   }
