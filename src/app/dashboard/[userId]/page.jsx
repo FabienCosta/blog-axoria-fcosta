@@ -35,7 +35,7 @@ export default async function page({ params }) {
             </li>
           ))
         ) : (
-          <li>You haven't created any articles yet.</li>
+          <li>{"You haven't created any articles yet."}</li>
         )}
       </ul>
     </main>
