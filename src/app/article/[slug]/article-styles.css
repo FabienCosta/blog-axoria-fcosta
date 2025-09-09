@@ -1,4 +1,4 @@
-.article-styles h2 {
+/* .article-styles h2 {
     font-size: 32px;
     margin-bottom: 32px;
 }
@@ -29,4 +29,59 @@
 
 .article-styles pre {
     background: #060606
+}
+*/
+
+
+/* Titres */
+.article-styles h2 {
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+/* Paragraphes et listes */
+.article-styles p,
+.article-styles li {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.article-styles li {
+    margin-bottom: 4px;
+    word-break: break-word; /* coupe les mots trop longs */
+}
+
+/* Blocs de code Markdown (```code```) */
+.article-styles pre {
+    display: block;
+    background: #060606;       /* fond noir */
+    color: #fff;               /* texte blanc */
+    padding: 24px 24px 32px;   /* padding confortable */
+    border-radius: 5px;
+
+    /* Responsivité */
+    white-space: pre;          /* conserve les sauts de ligne normaux */
+    word-break: normal;        /* ne coupe pas les mots au milieu */
+    overflow-x: auto;          /* scroll horizontal si nécessaire */
+    width: 100%;               /* s’adapte à la largeur du conteneur */
+}
+
+
+/* Texte à l’intérieur des blocs de code */
+.article-styles pre code {
+    font-size: 18px;
+}
+
+/* Images dans le Markdown */
+.article-styles img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Optionnel : padding horizontal pour mobile */
+@media (max-width: 768px) {
+    .article-styles {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }

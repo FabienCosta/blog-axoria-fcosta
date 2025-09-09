@@ -46,3 +46,16 @@ body {
 .img-16-9 {
   aspect-ratio: 16 / 9;
 }
+
+/* Blocs de code dans le Markdown */
+.prose pre {
+  white-space: pre-wrap;   /* coupe les lignes longues */
+  word-break: break-word;  /* force le retour à la ligne si nécessaire */
+  width: 100%;             /* s’adapte à la largeur du conteneur */
+}
+
+/* Images dans le Markdown */
+.prose img {
+  max-width: 100%;
+  height: auto;
+}
